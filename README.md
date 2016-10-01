@@ -9,4 +9,4 @@ This userscript for MyAnimeList and KissAnime provides links between the two sit
 Install
 -------
 * Get [Greasemonkey for FireFox](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) if you don't already have it.
-* Get [KissMAL](), wait 5 seconds, and click install to add the script.
+* Get [KissMAL](https://github.com/Juici/KissMAL/raw/master/kissmal.user.js), wait 5 seconds, and click install to add the script.
