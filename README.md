@@ -37,8 +37,8 @@ Connects MyAnimeList and KissAnime in a simple and effective way.
 
 
 ## Changelog
-#### Release 1.2 (1 Oct 2016)
-* First proper release
+#### Release 1.2 (Oct 1, 2016)
+* Added
   * Adds KissAnime links to MAL page
   * Adds MAL link to KissAnime page
   * Caches links to reduce number of http requests
