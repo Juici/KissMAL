@@ -2,13 +2,12 @@
 // @name         KissMAL
 // @namespace    juici.github.io
 // @description  Connects KissAnime and MAL with links between them on anime pages.
-// @version      1.1.1
+// @version      1.1.2
 // @author       Juici
 // @downloadURL  https://github.com/Juici/KissMAL/raw/master/kissmal.user.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
-// @include      /https?:\/\/myanimelist\.net\/anime\/.*/
-// @include      /https?:\/\/myanimelist\.net\/anime\.php\?([^&]*&)?id=.*/
-// @include      /https?:\/\/kissanime\.to\/Anime\/[^\/]+/?$/
+// @include      /^https?:\/\/myanimelist\.net\/anime(?:\/|\.php\?(?:[^&]*&)?(?:id=.*)?id=)(\d+).*$/
+// @include      /^https?:\/\/kissanime\.to\/Anime\/(.+?)(?:-Dub|-Sub)?\/?$/i
 // @connect      kissanime.to
 // @connect      myanimelist.net
 // @grant        GM_xmlhttpRequest
@@ -32,7 +31,7 @@ if (window.top != window.self)
         
         if (location.hostname == 'myanimelist.net') {            
             // get the MAL anime id
-            var regex = /^https?:\/\/myanimelist\.net\/anime(?:\/|\.php\?(?:[^&]*&)?(?:id=.*)?id=)(\d+).*$/i;
+            var regex = /^https?:\/\/myanimelist\.net\/anime(?:\/|\.php\?(?:[^&]*&)?(?:id=.*)?id=)(\d+).*$/;
             var id = parseInt(regex.exec(location.href)[1], 10);
             
             // check id is valid if not stop
