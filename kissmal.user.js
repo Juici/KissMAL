@@ -2,7 +2,7 @@
 // @name         KissMAL
 // @namespace    juici.github.io
 // @description  Connects KissAnime and MAL with links between them on anime pages.
-// @version      1.1.2
+// @version      1.1.3
 // @author       Juici
 // @downloadURL  https://github.com/Juici/KissMAL/raw/master/kissmal.user.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
@@ -18,6 +18,8 @@ if (window.top != window.self)
     return;
 
 (function ($) {
+    'use strict';
+
     const CACHE_ID = 'kissmal_cache';
     
     window.addEventListener('DOMContentLoaded', function() {
@@ -131,7 +133,7 @@ if (window.top != window.self)
                         console.log('Added KissAnime links and saved to cache');
                     }
                 });
-            }
+            };
             requestLinks();
         } else if (location.hostname == 'kissanime.to') {
             var title = $('a.bigChar').text().replace(/\((Sub|Dub)\)/i, '').trim();
@@ -139,10 +141,11 @@ if (window.top != window.self)
             
             // add cache for MAL link
             var cache = JSON.parse(localStorage.getItem(CACHE_ID)) || [];
-            var link = cache.find(function(e) { return e.id === id });
+            var link = cache.find(function(e) { return e.id === id; });
             
+            // use cached link
             if (typeof link !== 'undefined') {
-                $('.info:contains("Views:")').parent().append('<a href="' + malUrl + '" target="_blank">MAL Page</a><br>');
+                $('.info:contains("Views:")').parent().append('<a href="' + link.url + '" target="_blank">MAL Page</a><br>');
                 return;
             }
             
