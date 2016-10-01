@@ -4,7 +4,7 @@
 // @description  Connects KissAnime and MAL with links between them on anime pages.
 // @version      1.1.1
 // @author       Juici
-// @downloadURL  https://gist.github.com/Juici/698a3d1645aee07b60f9c86372a8b10a/raw/kissmal.user.js
+// @downloadURL  https://github.com/Juici/KissMAL/raw/master/kissmal.user.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @include      /https?:\/\/myanimelist\.net\/anime\/.*/
 // @include      /https?:\/\/myanimelist\.net\/anime\.php\?([^&]*&)?id=.*/
