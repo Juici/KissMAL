@@ -2,7 +2,7 @@
 // @name         KissMAL
 // @namespace    juici.github.io/KissMAL
 // @description  Connects KissAnime and MAL with links between them on anime pages.
-// @version      1.2.0
+// @version      1.2.1
 // @author       Juici
 // @downloadURL  https://github.com/Juici/KissMAL/raw/master/kissmal.user.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
@@ -46,7 +46,7 @@ if (window.top != window.self)
             var cache = JSON.parse(localStorage.getItem(CACHE_ID)) || [];
             var links;
             
-            $('h2:contains("Statistics")').before('<div id="kissanime-links"><h2><div class="floatRightHeader"><a href="javascript:void(0);" onclick="localStorage.setItem(\'' + CACHE_ID + '\', JSON.stringify((JSON.parse(localStorage.getItem(\'' + CACHE_ID + '\')) || []).filter(function(e) { return e.id !== ' + id + '; }))); console.log(\'Refreshing KissAnime link cache\'); location.href = location.href;">Refresh</a></div>KissAnime Links</h2><div id="searching">Searching...</div></div><br>');
+            $('h2:contains("Statistics")').before('<div id="kissanime-links"><h2><a class="floatRightHeader" href="javascript:void(0);" onclick="localStorage.setItem(\'' + CACHE_ID + '\', JSON.stringify((JSON.parse(localStorage.getItem(\'' + CACHE_ID + '\')) || []).filter(function(e) { return e.id !== ' + id + '; }))); console.log(\'Refreshing KissAnime link cache\'); location.href = location.href;">Refresh</a>KissAnime Links</h2><div id="searching">Searching...</div></div><br>');
             
             // remove expired entries
             var i = cache.length;
@@ -173,7 +173,6 @@ if (window.top != window.self)
                     cache.sort(function(a, b) { return a.id - b.id; });
                     localStorage.setItem(CACHE_ID, JSON.stringify(cache));
                     console.log('Added MAL link and saved to cache');
-                    
                 }
             });
         }
