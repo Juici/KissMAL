@@ -2,12 +2,12 @@
 // @name         KissMAL
 // @namespace    juici.github.io
 // @description  Connects KissAnime and MAL with links between them on anime pages.
-// @version      1.2.3
+// @version      1.2.4
 // @author       Juici
 // @downloadURL  https://github.com/Juici/KissMAL/raw/master/kissmal.user.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @include      /^https?:\/\/myanimelist\.net\/anime(?:\/|\.php\?(?:[^&]*&)?(?:id=.*)?id=)(\d+).*$/
-// @include      /^https?:\/\/kissanime\.to\/Anime\/(.+?)(?:-Dub|-Sub)?\/?$/
+// @include      /^https?:\/\/kissanime\.to\/Anime\/([^\/]+?)(?:-Dub|-Sub)?\/?$/
 // @connect      kissanime.to
 // @connect      myanimelist.net
 // @grant        GM_xmlhttpRequest
