@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         KissMAL
-// @namespace    juici.github.io/KissMAL
+// @namespace    juici.github.io
 // @description  Connects KissAnime and MAL with links between them on anime pages.
-// @version      1.2.1
+// @version      1.2.2
 // @author       Juici
 // @downloadURL  https://github.com/Juici/KissMAL/raw/master/kissmal.user.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
