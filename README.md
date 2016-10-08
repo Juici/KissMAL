@@ -16,8 +16,8 @@ Connects MyAnimeList and KissAnime in a simple and effective way.
 > ##### Note: After installation (which may require restarting your browser), you are now ready to install userscripts.
 
 #### Step 2: Userscript
-* [Install](https://github.com/Juici/KissMAL/raw/master/kissmal.user.js) *from github.com*
 * [Install](https://juici.github.io/KissMAL/kissmal.user.js) *from juici.github.io*
+* [Install](https://github.com/Juici/KissMAL/raw/master/kissmal.user.js) *from github.com*
 
 
 #### Step 3: Support Author
