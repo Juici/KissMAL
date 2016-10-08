@@ -2,9 +2,9 @@
 // @name         KissMAL
 // @namespace    juici.github.io
 // @description  Connects KissAnime and MAL with links between them on anime pages.
-// @version      1.2.4
+// @version      1.2.5
 // @author       Juici
-// @downloadURL  https://github.com/Juici/KissMAL/raw/master/kissmal.user.js
+// @downloadURL  https://juici.github.io/KissMAL/kissmal.user.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @include      /^https?:\/\/myanimelist\.net\/anime(?:\/|\.php\?(?:[^&]*&)?(?:id=.*)?id=)(\d+).*$/
 // @include      /^https?:\/\/kissanime\.to\/Anime\/([^\/]+?)(?:-Dub|-Sub)?\/?$/
@@ -54,9 +54,7 @@ if (window.top != window.self)
             while (i--) {
                 if (cache[i].expires < now)
                     cache.splice(i, 1);
-                
-                // get links for mal id
-                if (cache[i].id === id)
+                else if (cache[i].id === id)
                     links = cache[i];
             }
             
@@ -66,7 +64,6 @@ if (window.top != window.self)
                 for (let link of links.links) {
                     $('#kissanime-links').append('<a href="' + link.url + '" target="_blank">' + link.name + '</a><br>');
                 }
-                console.log('Retrieved KissAnime links from the cache');
                 return;
             }
 
@@ -86,6 +83,8 @@ if (window.top != window.self)
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     onload: function(response) {
+                        console.log(response);
+                        
                         // check the response
                         var hasResponse =  ((typeof response.response === 'undefined' || response.response === '') ? false : true);
                         if (!hasResponse) {
@@ -95,7 +94,6 @@ if (window.top != window.self)
                             else {
                                 $('#searching').remove();
                                 $('#kissanime-links').append('<div>Could not find any results.</div>');
-                                console.log('Could not find any KissAnime links');
                             }
                             return;
                         }
@@ -108,7 +106,6 @@ if (window.top != window.self)
                         var cfCookie = ($page.find('.cf-browser-verification').length ? false : true);
                         if (!cfCookie) {
                             $('#kissanime-links').append('<div>Could not reach <a href="http://kissanime.to/">KissAnime.to</a>. This probably means the CloudFlare cookie expired or doesn\'t exist. Visit <a href="http://kissanime.to/">KissAnime.to</a> then try again.</div>');
-                            console.log('Could not reach KissAnime, this probably mean the CloudFlare cookie has expired or doesn\'t exist');
                             return;
                         }
 
@@ -130,7 +127,6 @@ if (window.top != window.self)
                         
                         // save cache to local storage
                         localStorage.setItem(CACHE_ID, JSON.stringify(cache));
-                        console.log('Added KissAnime links and saved to cache');
                     }
                 });
             };
@@ -169,10 +165,9 @@ if (window.top != window.self)
                     $('.info:contains("Views:")').parent().append('<a href="' + url + '" target="_blank">MAL Page</a><br>');
 
                     // cache the MAL link
-                    cache.push({ id: id, link: url });
+                    cache.push({ id: id, url: url });
                     cache.sort(function(a, b) { return a.id - b.id; });
                     localStorage.setItem(CACHE_ID, JSON.stringify(cache));
-                    console.log('Added MAL link and saved to cache');
                 }
             });
         }
