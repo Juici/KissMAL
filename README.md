@@ -5,18 +5,19 @@ Connects MyAnimeList and KissAnime in a simple and effective way.
 ## Donate
 **Making a donation is an act of generosity. Your support, however modest, is greatly apreciated. Your donations help to continue to support and develop this and other projects.**
 
-* ![Paypal](https://github.com/Juici/KissMAL/raw/gh-pages/images/paypal.png) Paypal: [Donate](http://bit.ly/JuiciPayPal)
+* ![Paypal](https://juici.github.io/images/paypal.png) Paypal: [Donate](http://bit.ly/JuiciPayPal)
 
 ## Install
 
 #### Step 1: Script Manager
-* ![Firefox](https://github.com/Juici/KissMAL/raw/gh-pages/images/firefox.png) [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/)
-* ![Chrome](https://github.com/Juici/KissMAL/raw/gh-pages/images/chrome.png) [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+* ![Firefox](https://juici.github.io/images/firefox.png) [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/)
+* ![Chrome](https://juici.github.io/images/chrome.png) [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 
 > ##### Note: After installation (which may require restarting your browser), you are now ready to install userscripts.
 
 #### Step 2: Userscript
 * [Install](https://github.com/Juici/KissMAL/raw/master/kissmal.user.js) *from github.com*
+* [Install](https://juici.github.io/KissMAL/kissmal.user.js) *from juici.github.io*
 
 
 #### Step 3: Support Author
